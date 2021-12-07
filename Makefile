@@ -1,17 +1,18 @@
 compile: 
-	@g++-11 Server.cpp -o server 
-	@g++-11 Client.cpp -o client
-	@g++-11 Error_Client.cpp -o error_client
+	mkdir executables
+	@g++-11 server_src/Server.cpp -o executables/server 
+	@g++-11 client_src/Client.cpp -o executables/client
+	@g++-11 client_src/Error_Client.cpp -o executables/error_client
 	$(info Compiling code...)
 
 addclient:
-	@./client
+	@./executables/client
 	$(info Creating new client...)
 
 adderror_client:
-	@./error_client
+	@./executables/error_client
 	$(info Creating new error_client...)
 
 startserver:
-	@./server
+	@./executables/server
 	$(info Starting server...)
